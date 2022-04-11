@@ -1,0 +1,18 @@
+ceiling_perception: #name space (same as launch file)
+  ceiling_perception: # package name
+    ros__parameters:
+      enabled: true
+      publish_tf: false
+      log_odds_saturation: 10.0
+      num_overhead_cameras: 1
+      resolution: 0.05 #must be as same as SLAM resolution
+      overhead_topics: [ "/autonomous_robot/image_segmentation/image_1" ]
+      camera_poses: "[[0.0, 0.0, 3.5]]"
+#      overhead_topics: [ "/autonomous_robot/image_segmentation/image_1", "/autonomous_robot/image_segmentation/image_2",
+#                         "/autonomous_robot/image_segmentation/image_3", "/autonomous_robot/image_segmentation/image_4",
+#                         "/autonomous_robot/image_segmentation/image_5", "/autonomous_robot/image_segmentation/image_6",
+#                         "/autonomous_robot/image_segmentation/image_7", "/autonomous_robot/image_segmentation/image_8",
+#                         "/autonomous_robot/image_segmentation/image_9", "/autonomous_robot/image_segmentation/image_10" ]
+#
+#      camera_poses: "[[-1, -3.5, 5.5],[7.5, -3.5, 5.5], [13.5, -3.5, 5.5], [19.5, -3.5, 5.5], [25.5, -3.5, 5.5],
+#                                [-1, 2.0, 5.5],[7.5, 2.0, 5.5],[13.5, 2.0, 5.5],[19.5, 2.0, 5.5],[25.5, 2.0, 5.5]]"

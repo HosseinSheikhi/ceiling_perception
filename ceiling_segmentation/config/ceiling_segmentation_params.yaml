@@ -1,0 +1,23 @@
+ceiling_segmentation: #name space (same as launch file)
+  ceiling_segmentation: # package name
+    ros__parameters:
+      mode: train #inference - train
+      method: VGG16 #VGG16 - DenseNet
+      frequency: 1
+      overhead_topics: [ "/overhead_cam_1/camera/image_raw", "/overhead_cam_2/camera/image_raw",
+                         "/overhead_cam_3/camera/image_raw", "/overhead_cam_4/camera/image_raw",
+                         "/overhead_cam_5/camera/image_raw", "/overhead_cam_6/camera/image_raw",
+                         "/overhead_cam_7/camera/image_raw", "/overhead_cam_8/camera/image_raw",
+                         "/overhead_cam_9/camera/image_raw", "/overhead_cam_10/camera/image_raw"
+                        ]
+
+      image_size: 224
+      num_channels: 3
+      num_classes: 2
+      batch_size: 4
+      epoch: 6
+      buffer_size: 32
+      seed: 15
+      data_address: "/home/hossein/synthesisData_Jan2021"
+      weight_address: "/home/hossein/nav2_ws/src/ceiling_perception/ceiling_segmentation/weights/WithoutBN/NaiveLoss2/"
+      
