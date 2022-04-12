@@ -12,7 +12,7 @@ ceiling_perception::OverheadCameraManager::OverheadCameraManager(std::string nam
 {
   image_height_ = 480;
   image_width_ = 640;
-  focal_x_ = focal_y_ = 381.362;
+  focal_x_ = focal_y_ = 254.91;
   x_0_ = 320.5;
   y_0_ = 240.5;
   occupied_prob_.resize(image_height_, std::vector<float>(image_width_));
@@ -27,7 +27,7 @@ ceiling_perception::OverheadCameraManager::OverheadCameraManager(std::string nam
     name_(name), pose_x_(pose_x), pose_y_(pose_y), pose_z_(pose_z),
     image_height_(image_height), image_width_(image_width)
 {
-  focal_x_ = focal_y_ = 381.362;
+  focal_x_ = focal_y_ = 254.91;
   x_0_ = 320.5;
   y_0_ = 240.5;
   occupied_prob_.resize(image_height_, std::vector<float>(image_width_));
