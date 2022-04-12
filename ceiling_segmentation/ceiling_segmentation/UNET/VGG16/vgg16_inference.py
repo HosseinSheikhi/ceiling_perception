@@ -2,7 +2,7 @@ from soupsieve import select
 import tensorflow as tf
 import os
 import matplotlib.pyplot as plt
-from UNET.VGG16.EncoderDecoder import EncoderDecoder
+from ceiling_segmentation.UNET.VGG16.EncoderDecoder import EncoderDecoder
 from PIL import Image
 import numpy as np
 

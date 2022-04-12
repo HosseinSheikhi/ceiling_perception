@@ -10,7 +10,8 @@ parameters_file_name = 'ceiling_segmentation_params.yaml'
 
 def generate_launch_description():
     parameters_file_path = str(pathlib.Path(__file__).parents[1])  # get current path and go one level up
-    parameters_file_path += '/config/' + parameters_file_name
+    parameters_file_path += '/ceiling_segmentation/' + parameters_file_name
+
     return LaunchDescription([
         Node(
             package='ceiling_segmentation',

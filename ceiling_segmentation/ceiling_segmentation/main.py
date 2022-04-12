@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 from rclpy.qos import qos_profile_sensor_data, qos_profile_system_default
 from rcl_interfaces.msg import ParameterDescriptor, ParameterType
-from UNET.VGG16 import vgg16_train, vgg16_inference
+from ceiling_segmentation.UNET.VGG16 import vgg16_train, vgg16_inference
 # from ceiling_segmentation.DenseNet.models import densenet_train, densenet_inference
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
@@ -105,6 +105,9 @@ class CeilingSegmentation(Node):
         self.timer = self.create_timer(1/self.frequency, self.publish_segmented_images)
 
     def publish_segmented_images(self):
+        if(self.segmented_images == None or self.segmented_images==[]):
+            self.get_logger().info('Waiting for ceiling cameras ...')    
+            return
         self.get_logger().info('Publishing images ...')
         for idx, publisher in enumerate(self.image_publisher):
             publisher.publish(CvBridge().cv2_to_imgmsg(self.segmented_images[idx]))

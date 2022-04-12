@@ -1,6 +1,6 @@
 import tensorflow as tf
-from UNET.VGG16.Encoder import Encoder
-from UNET.VGG16.Decoder import Decoder
+from ceiling_segmentation.UNET.VGG16.Encoder import Encoder
+from ceiling_segmentation.UNET.VGG16.Decoder import Decoder
 
 
 class EncoderDecoder(tf.keras.Model):

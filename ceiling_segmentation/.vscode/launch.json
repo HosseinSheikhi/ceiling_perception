@@ -1,0 +1,18 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "args": ["--ros-args --params-file /home/hossein/nav2_ws/src/ceiling_perception/ceiling_segmentation/config/ceiling_segmentation_params.yaml"],
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/ceiling_segmentation/main.py",
+            // "program": "${workspaceFolder}/ceiling_segmentation/launch/ceiling_segmentation_launch.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

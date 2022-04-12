@@ -9,8 +9,8 @@ I have to define as subclass UNET
 """
 
 import tensorflow as tf
-from UNET.VGG16.VGGBlk import VggBlock
-from UNET.VGG16.VGGBlkWithBN import VggBlockWithBN
+from ceiling_segmentation.UNET.VGG16.VGGBlk import VggBlock
+from ceiling_segmentation.UNET.VGG16.VGGBlkWithBN import VggBlockWithBN
 
 
 class Encoder(tf.keras.Model):

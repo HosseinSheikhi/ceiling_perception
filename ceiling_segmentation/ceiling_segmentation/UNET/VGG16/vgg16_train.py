@@ -1,6 +1,6 @@
 import tensorflow as tf
-from UNET.VGG16.EncoderDecoder import EncoderDecoder
-from utils.LoadData import LoadData
+from ceiling_segmentation.UNET.VGG16.EncoderDecoder import EncoderDecoder
+from ceiling_segmentation.utils.LoadData import LoadData
 import matplotlib.pyplot as plt
 import datetime
 import numpy as np

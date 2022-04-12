@@ -1,14 +1,11 @@
 ceiling_segmentation: #name space (same as launch file)
   ceiling_segmentation: # package name
     ros__parameters:
-      mode: train #inference - train
+      mode: inference #inference - train
       method: VGG16 #VGG16 - DenseNet
-      frequency: 1
+      frequency: 1.0
       overhead_topics: [ "/overhead_cam_1/camera/image_raw", "/overhead_cam_2/camera/image_raw",
                          "/overhead_cam_3/camera/image_raw", "/overhead_cam_4/camera/image_raw",
-                         "/overhead_cam_5/camera/image_raw", "/overhead_cam_6/camera/image_raw",
-                         "/overhead_cam_7/camera/image_raw", "/overhead_cam_8/camera/image_raw",
-                         "/overhead_cam_9/camera/image_raw", "/overhead_cam_10/camera/image_raw"
                         ]
 
       image_size: 224
