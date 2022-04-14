@@ -48,7 +48,7 @@ ceiling_perception::CeilingPerception::CeilingPerception(rclcpp::NodeOptions opt
 
   /// define timer and bind it to its subscriber
   map_timer_ = this->create_wall_timer(
-      0.5s, std::bind(&CeilingPerception::map_timer_callback, this),
+      5s, std::bind(&CeilingPerception::map_timer_callback, this),
       callback_group_map_timer_);
 
   /// define subscribers to the segmented topics and assign each of them to a camera manager
