@@ -4,9 +4,12 @@ ceiling_segmentation: #name space (same as launch file)
       mode: inference #inference - train
       method: VGG16 #VGG16 - DenseNet
       frequency: 1.0
+      # simulation
       overhead_topics: [ "/overhead_cam_1/camera/image_raw", "/overhead_cam_2/camera/image_raw",
                          "/overhead_cam_3/camera/image_raw", "/overhead_cam_4/camera/image_raw",
                         ]
+      # real
+      overhead_topics: [ "/camera/color/image_raw" ]
 
       image_size: 224
       num_channels: 3
