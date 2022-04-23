@@ -225,6 +225,8 @@ private:
   int num_overhead_cameras_; ///< Number of overhead cameras will be fed to this class to get a map
   std::vector<std::vector<float>> camera_poses_; ///< a vector of (x,y,z) coordinates of all cameras
   std::vector<std::string> overhead_topics_; ///< a vector of topic names that segmented images are published on
+  double focal_x_, focal_y_, x_0_,
+      y_0_; ///< camera calibration parameters. will be read from parameters and pass to the overhead camera manager
   double resolution_; ///< map resolution, must be as same as SLAM resolution
   /**
    * use to saturate prior log odds

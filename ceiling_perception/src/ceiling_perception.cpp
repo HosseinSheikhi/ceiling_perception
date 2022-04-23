@@ -17,7 +17,10 @@ ceiling_perception::CeilingPerception::CeilingPerception(rclcpp::NodeOptions opt
   this->declare_parameter<double>("resolution", 0.05);
   this->declare_parameter<std::string>("camera_poses", "[[0, 0, 3.5]");
   this->declare_parameter<std::vector<std::string>>("overhead_topics", std::vector<std::string>());
-
+  this->declare_parameter<double>("focal_x_", 0.0);
+  this->declare_parameter<double>("focal_y_", 0.0);
+  this->declare_parameter<double>("x_0_", 0.0);
+  this->declare_parameter<double>("y_0_", 0.0);
   /// read declared parameters, we need them from now on
   try {
     get_parameters();
@@ -56,7 +59,7 @@ ceiling_perception::CeilingPerception::CeilingPerception(rclcpp::NodeOptions opt
     overhead_cameras_.emplace_back(std::make_shared<OverheadCameraManager>(
         "overhead_cam_" + std::to_string(cam_index + 1),
         camera_poses_[cam_index][0], camera_poses_[cam_index][1],
-        camera_poses_[cam_index][2]));
+        camera_poses_[cam_index][2], 480, 640, focal_x_, focal_y_, x_0_, y_0_));
     camera_subs_.emplace_back(
         this->create_subscription<sensor_msgs::msg::Image>(
             overhead_topics_[cam_index], rclcpp::SystemDefaultsQoS(),
@@ -220,6 +223,10 @@ void ceiling_perception::CeilingPerception::get_parameters() {
   this->get_parameter("num_overhead_cameras", num_overhead_cameras_);
   this->get_parameter("resolution", resolution_);
   this->get_parameter("overhead_topics", overhead_topics_);
+  this->get_parameter("focal_x_", focal_x_);
+  this->get_parameter("focal_y_", focal_y_);
+  this->get_parameter("x_0_", x_0_);
+  this->get_parameter("y_0_", y_0_);
 
   std::string camera_poses_str;
   this->get_parameter("camera_poses", camera_poses_str);
