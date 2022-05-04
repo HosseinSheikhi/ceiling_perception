@@ -116,7 +116,10 @@ class CeilingSegmentation(Node):
         self.get_logger().info('Images received')
         cv_images = []
         for image in images:
-            cv_images.append(CvBridge().imgmsg_to_cv2(image, desired_encoding='bgr8'))
+            cv_image = CvBridge().imgmsg_to_cv2(image, desired_encoding='bgr8')
+            cv_images.append(cv2.flip(cv2.rotate(cv_image, cv2.cv2.ROTATE_90_COUNTERCLOCKWISE),0))
+            #cv_images.append(cv2.flip(cv_image,1))
+            #cv_images.append(cv_image)
 
         self.segmented_images.clear()
         predicted_images = self.model.inference(*cv_images)

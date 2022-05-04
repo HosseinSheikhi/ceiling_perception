@@ -24,4 +24,4 @@ ceiling_perception: #name space (same as launch file)
       y_0_: 250.42886352539062
       num_overhead_cameras: 1
       overhead_topics: [ "/ceiling_segmentation/autonomous_robot/image_segmentation/image_1"]
-      camera_poses: "[[-5.0, -5.0, 3.5]]"
+      camera_poses: "[[-2.0, -1.2, 3.5]]"
